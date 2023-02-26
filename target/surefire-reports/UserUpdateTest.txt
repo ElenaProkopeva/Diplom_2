@@ -1,13 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: UserUpdateTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.668 s <<< FAILURE! - in UserUpdateTest
-checkUpdateUser(UserUpdateTest)  Time elapsed: 2.017 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-JSON path success doesn't match.
-Expected: is <true>
-  Actual: <false>
-
-	at UserUpdateTest.checkUpdateUser(UserUpdateTest.java:33)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.177 s - in UserUpdateTest

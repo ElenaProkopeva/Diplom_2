@@ -1,22 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: OrderCreateTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 13.518 s <<< FAILURE! - in OrderCreateTest
-checkCreateOrderWithUserAuth(OrderCreateTest)  Time elapsed: 6.705 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-JSON path success doesn't match.
-Expected: is <true>
-  Actual: <false>
-
-	at OrderCreateTest.checkCreateOrderWithUserAuth(OrderCreateTest.java:40)
-
-checkCreateOrderWithoutUserAuth(OrderCreateTest)  Time elapsed: 2.028 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-JSON path message doesn't match.
-Expected: You should be authorised
-  Actual: One or more ids provided are incorrect
-
-	at OrderCreateTest.checkCreateOrderWithoutUserAuth(OrderCreateTest.java:56)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.653 s - in OrderCreateTest
