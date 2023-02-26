@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: UserOrdersListTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.48 s <<< FAILURE! - in UserOrdersListTest
-checkGetOrdersListWithoutUserAuth(UserOrdersListTest)  Time elapsed: 1.258 s  <<< ERROR!
-java.lang.NullPointerException
-	at UserOrdersListTest.setUp(UserOrdersListTest.java:27)
-
-checkGetOrdersListWithUserAuth(UserOrdersListTest)  Time elapsed: 1.217 s  <<< ERROR!
-java.lang.NullPointerException
-	at UserOrdersListTest.setUp(UserOrdersListTest.java:27)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.136 s - in UserOrdersListTest

@@ -1,3 +1,4 @@
 org\example\Main.class
 org\example\Order.class
+org\example\Ingredient.class
 org\example\User.class

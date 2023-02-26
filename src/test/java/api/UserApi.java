@@ -77,17 +77,10 @@ public class UserApi {
     }
 
     @Step("Удалить юзера по id")
-    public void deleteUser(){
-        String userToken =
-                requestSpecification.given()
-                        .body(user) // заполни body
-                        .when()
-                        .post(USER_LOGIN_ENDPOINT) // отправь запрос на ручку
-                        .then().extract().body().path("accessToken");
-        if (userToken != null) {
-            String token = userToken.replace("Bearer ", "");
+    public void deleteUser(String userToken){
+        if ((userToken != null) && (!userToken.equals(""))) {
             requestSpecification.given()
-                    .auth().oauth2(token)
+                    .auth().oauth2(userToken)
                     .delete(USER_UPDATE_ENDPOINT) // отправка DELETE-запроса
                     .then().assertThat().statusCode(SC_ACCEPTED); // проверка, что сервер вернул код 200
         }

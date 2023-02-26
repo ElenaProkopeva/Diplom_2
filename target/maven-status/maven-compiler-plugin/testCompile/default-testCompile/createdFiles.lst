@@ -5,4 +5,5 @@ api\BaseApi.class
 UserOrdersListTest.class
 OrderCreateTest.class
 UserLoginTest.class
+api\IngredientApi.class
 UserUpdateTest.class

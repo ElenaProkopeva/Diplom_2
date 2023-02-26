@@ -13,6 +13,11 @@ import static org.hamcrest.Matchers.*;
 
 public class UserLoginTest extends BaseApi {
 
+    private final static String USER_LOGIN = "g77716elenagromova@yandex.com";
+    private final static String USER_PASSWORD = "1234";
+    private final static String USER_NAME = "Elena";
+    private final static String USER_NULL = "";
+
     private UserApi userApi;
 
     @Before
@@ -27,7 +32,7 @@ public class UserLoginTest extends BaseApi {
     @DisplayName("Проверка авторизации юзера (успешно)")
     @Description("Успешная проверка логина юзера")
     public void checkLoginUser(){
-        userApi.setUser(new User("g77716elenagromova@yandex.com", "1234", "Elena"));
+        userApi.setUser(new User(USER_LOGIN, USER_PASSWORD, USER_NAME));
         userApi.createUser();
         userApi.loginUser()
                 .then().assertThat().body("success", is(true))
@@ -42,7 +47,7 @@ public class UserLoginTest extends BaseApi {
     @DisplayName("Проверка авторизации юзера без email")
     @Description("Проверка, что нельзя залогиниться без ввода email")
     public void checkLoginUserWithoutEmail(){
-        userApi.setUser(new User("", "1234", "Elena"));
+        userApi.setUser(new User(USER_NULL, USER_PASSWORD, USER_NAME));
         userApi.createUser();
         userApi.loginUser()
                 .then().assertThat().body("success", is(false))
@@ -55,7 +60,7 @@ public class UserLoginTest extends BaseApi {
     @DisplayName("Проверка авторизации юзера без пароля")
     @Description("Проверка, что нельзя залогиниться без ввода пароля")
     public void checkLoginUserWithoutPassword(){
-        userApi.setUser(new User("g77716elenagromova@yandex.com", "", "Elena"));
+        userApi.setUser(new User(USER_LOGIN, USER_NULL, USER_NAME));
         userApi.createUser();
         userApi.loginUser()
                 .then().assertThat().body("success", is(false))
@@ -68,7 +73,7 @@ public class UserLoginTest extends BaseApi {
     @DisplayName("Проверка авторизации юзера без данных")
     @Description("Проверка, что нельзя залогиниться без ввода данных")
     public void checkLoginUserWithoutAllData(){
-        userApi.setUser(new User("", "", "Elena"));
+        userApi.setUser(new User(USER_NULL, USER_NULL, USER_NAME));
         userApi.createUser();
         userApi.loginUser()
                 .then().assertThat().body("success", is(false))
@@ -79,6 +84,6 @@ public class UserLoginTest extends BaseApi {
 
     @After
     public void dataClean(){
-        userApi.deleteUser();
+        userApi.deleteUser(userApi.getTokenUser());
     }
 }
